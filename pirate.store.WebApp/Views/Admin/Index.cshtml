@@ -1,0 +1,74 @@
+﻿@model pirate.store.Domain.Models.AdminViewModel
+@{
+    ViewBag.Title = "Factory";
+}
+<h2>Factory</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ActionLink("Create item", "Create", "Admin")
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.Author))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.MegaLink))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.CoffeeLink))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.ImageLink))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.IsActive))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.FileSize))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item.CreatedDate))
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MegaLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoffeeLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+    }
+
+</table>
